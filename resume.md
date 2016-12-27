@@ -8,6 +8,7 @@ permalink: /resume/
 Reno, NV | [email](mailto:phil.cleveland@gmail.com)
 
 ## PROFESSIONAL EXPERIENCE
+
 #### SONOCINÉ (MEDICAL DEVICES – AUTOMATED BREAST IMAGING) RENO, NEVADA
 **Women's Health** – Robotics systems and screening software for early breast cancer detection
 
