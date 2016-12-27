@@ -10,6 +10,7 @@ Reno, NV | [email](mailto:phil.cleveland@gmail.com)
 ## PROFESSIONAL EXPERIENCE
 
 #### SONOCINÉ (MEDICAL DEVICES – AUTOMATED BREAST IMAGING) RENO, NEVADA
+
 **Women's Health** – Robotics systems and screening software for early breast cancer detection
 
 * SOFTWARE DEVELOPMENT MANAGER 06/2013 - PRESENT
@@ -34,6 +35,7 @@ Responsiveness: Increased customer responsiveness by reducing product defect cor
 **Leadership and Management:** Led a team of 7 developers (2 remote) and 2 remote quality assurance engineers through many successful commercial product releases. Mentored engineers on development best practices and career advancement. Wrote yearly reviews for each team member and conducted monthly 1 on 1 meetings with direct reports.
 
 #### GENERAL ELECTRIC COMPANY (CONDITION AND VIBRATION MONITORING) MINDEN, NEVADA
+
 **Diagnostics** - Distributed machinery condition monitoring solutions using wired and wireless sensors
 
 * SENIOR SOFTWARE ENGINEER 03/2005 – 10/2009
@@ -46,14 +48,14 @@ Responsiveness: Increased customer responsiveness by reducing product defect cor
 
 **Product Development:** Developed code for a distributed condition monitoring application for critical machinery. Converted detailed product specification into working software product.
 
-#### EDUCATION
+## EDUCATION
 UNIVERSITY OF NEVADA, RENO Reno, NV, 1994-2000
 * Bachelor of Science (BSc), Computer Science
 
 UNIVERSITY OF NEVADA, RENO Reno, NV, 2005-2008
 * Master of Business Administration (MBA)
 
-#### TRAINING
+## TRAINING
 CERTIFIED SIX SIGMA GREEN BELT
 
 Six Sigma Green Belt certification from General Electric Company. Applied the Define, Measure, Analyze, Improve, Control methodology for process control on several software projects.
