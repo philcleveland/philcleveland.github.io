@@ -1,1 +1,1 @@
-My webstie @ "philcleveland.github.io" 
+[My Blog](philcleveland.github.io)
