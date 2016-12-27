@@ -3,7 +3,6 @@ layout: page
 title: Resume
 permalink: /resume/
 ---
-
 # PHILLIP W. CLEVELAND
 Reno, NV | [email](mailto:phil.cleveland@gmail.com)
 
@@ -23,7 +22,6 @@ Responsiveness: Increased customer responsiveness by reducing product defect cor
 **Hiring:** Developed a three phased, objective, structured interview hiring process and conducted interviews using the process. This process used standardized scoring of situational judgement questions to determine good employee fit.
 
 #### PERTRAC FINANCIAL SOLUTIONS (ANALYTIC AND WORKFLOW SOLUTIONS) RENO, NEVADA
-
 **Finance** – Analytical tools to find and track investments and build portfolios for investment professionals
 
 * SENIOR SOFTWARE ENGINEER 10/2009 – 06/2013
