@@ -15,5 +15,8 @@ I just did a ```rm -fdr .git``` from the base directory and then ```git init``` 
 Here is a very helpful markdown cheatsheet that will help with any pages you do in markdown(.md) files.
 [Markdown Cheetsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code){:target="_blank"}
 
+Here is the kramdown quick reference
+[kramdown](https://kramdown.gettalong.org/quickref.html)
+
 Since there isn't a favicon.ico by default, this is a great place to get one.  It allows you to download any icon from the [Font Awesome](http://fontawesome.io/) set
 [Favicon Generator](http://paulferrett.com/fontawesome-favicon/){:target="_blank"}
