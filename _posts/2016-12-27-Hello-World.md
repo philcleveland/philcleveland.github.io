@@ -12,4 +12,4 @@ in.  Right now that is probably going to tend towards F#, Elixir, Go and C# usin
 
 <!--![_config.yml]({{ site.baseurl }}/images/config.png)-->
 
-If you want to look at some of my code check out [Phil Cleveland](https://github.com/barryclark/jekyll-now) on GitHub
+If you want to look at some of my code check out [Phil Cleveland](https://github.com/philcleveland){:target="_blank"} on GitHub
