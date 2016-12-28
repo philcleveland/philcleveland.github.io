@@ -4,11 +4,9 @@ title: Hello World!
 ---
 
 Hi, I'm Phil.
-I like a lot of things (skiing, zymurgy, technolgy), but this site is going to be 
-dedicated to software development.  I really like learning new technologies, so there
-is a good chance that this site will have a smattering of lots of tech that I am interested
-in.  Right now that is probably going to tend towards F#, Elixir, Go and C# using
-.NET Core.  
+
+I hope this site can provide some value to you. It is going to be dedicated to software development.  I really like learning new technologies, so there is a good chance that this site will have a smattering of lots of tech that I am interested
+in.  Right now that is probably going to tend towards F#, Elixir, Go and C# using .NET Core.  
 
 <!--![_config.yml]({{ site.baseurl }}/images/config.png)-->
 
