@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+![Avatar]({{ site.avatar }}){:class="site-avatar"}
+
 Hi, I'm Phil.
 
   I like a lot of things. I am addicted to skiing, I love brewing beer, wine, and ciders. And I really love learning new technologies. At the moment I am interested
