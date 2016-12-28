@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <script src="https://use.fontawesome.com/0135939975.js"></script>
-    
+
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     {% include meta.html %}
@@ -16,43 +17,48 @@
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
     <!-- I want to personally thank Barry Clark for jekyll-now. It made this so much easier -->
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-logo"><i class="fa fa-code fa-4x" style="color:black"></i></a>
+        <div class="container">
+            <header class="masthead clearfix">
+                <!--the logo-->
+                <a href="{{ site.baseurl }}/" class="site-logo">
+                    <i class="fa fa-code fa-4x" style="color:black"></i>
+                </a>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
+                <div class="site-info">
+                    <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+                    <p class="site-description">{{ site.description }}</p>
+                </div>
 
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-            <a href="{{ site.baseurl }}/resume">Resume</a>
-          </nav>
-        </header>
-      </div>
+                <nav>
+                    <a href="{{ site.baseurl }}/">Blog</a>
+                    <a href="{{ site.baseurl }}/about">About</a>
+                    <a href="{{ site.baseurl }}/resume">Resume</a>
+                </nav>
+            </header>
+        </div>
     </div>
 
     <div id="main" role="main" class="container">
-      {{ content }}
+        {{ content }}
     </div>
 
     <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-          <div>
-            <p>Copyright 2016 Phillip Cleveland</p>
-          <div>
-        </footer>
-      </div>
-    </div>
+        <div class="container">
+            <footer class="footer">
+                {% include svg-icons.html %}
+                <div>
+                    <p>Disclaimer: The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way.</p>
+                    <p>© Copyright 2016 Phillip Cleveland</p>
+                    <div>
+            </footer>
+            </div>
+            </div>
 
-    {% include analytics.html %}
-  </body>
+            {% include analytics.html %}
+</body>
+
 </html>
