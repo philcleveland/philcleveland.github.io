@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Object Creation in JavaScript
+date: 2017-1-2
 ---
 
 A note before starting. **use strict** prevents a lot of syntax errors that
@@ -49,11 +50,11 @@ typed language like C#.
 
 {% highlight javascript linenos %}
 
-  function Knight(name, color, weapon) = {
+  function Knight(name, color, weapon) {
     this.name = name
     this.color = color
     this.weapon = weapon
-    attack = function() {
+    this.attack = function() {
       console.log('I shall smite thee in the name of the king!');
     }
   };

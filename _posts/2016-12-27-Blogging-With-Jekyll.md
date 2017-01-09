@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Jekyll and GitHub Pages
+date: 2016-12-28
 ---
 
 Today I launched my blog.  I used Jekyll and Github pages and it was pretty easy.  Here are a few links that were really helpful in getting started.
