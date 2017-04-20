@@ -46,8 +46,7 @@ export class ReactiveCanvas extends React.Component<IReactiveCanvasProps, undefi
             } else {
                 this.ctx = c;
             }
-
-            console.log('subscribing to the ultrasound image stream');
+            
             this.disp =
                 this.props.imageStream
                     .subscribe(i => {
