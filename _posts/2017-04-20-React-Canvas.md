@@ -7,23 +7,32 @@ date: 2017-04-20
 This is just a quick post to show some typescript code that implements a React canvas component. It's a bit opionated in that I am using an Rx stream for the image data being displayed.  It's a stateless/dumb component that displays low level image data.  Hit me  up in the comments if you have any questions.
 
 ### Typescript React Canvas Component 
+* Updated on 10 May 2017 to a more efficient implementation *
 {% highlight typescript linenos %}
 import * as React from 'react';
 import * as Rx from 'rx';
 import * as ReactDOM from 'react-dom';
 
-export type PixelRepresentation = 'GrayScale8bpp'; //| GrayScale16bpp | add others representations here
-
-export class Image {
+export class ReactiveCanvasImage {
     constructor(
         public width: number, //assuming stride to be equal width
         public height: number,
-        public pixelRep: PixelRepresentation, //defines what each byte in pixels means
         public pixels: number[]) { } //pixels is an array of bytes
 }
 
+// Defines the properties of the ReactiveCanvas
+// It is important to have width and height pre-defined for a
+// high frame rate. If width and height are reset per image in
+// the imageStream then frame rate suffers.
+// height: in pixels
+// width: in pixels
+// imageMIMEType: e.g. 'image/jpeg'
+// imageStream: and observable of ReactiveCanvasImage to display
 export interface IReactiveCanvasProps {
-    imageStream: Rx.Observable<Image>;
+    height: number;
+    width: number;
+    imageMIMEType: string;
+    imageStream: Rx.Observable<ReactiveCanvasImage>;
 }
 
 export class ReactiveCanvas extends React.Component<IReactiveCanvasProps, undefined> {
@@ -38,19 +47,14 @@ export class ReactiveCanvas extends React.Component<IReactiveCanvasProps, undefi
     componentDidMount() {
         try {
             this.canvas = (ReactDOM.findDOMNode(this.refs.canvas) as HTMLCanvasElement);
-            let c = this.canvas.getContext('2d');
-            //this is super wonky. Wonder if there is a better way
-            //to deal with null possibility in the union return.
-            if (c == null) {
-                throw new ReferenceError('Cannot get canvas context');
-            } else {
-                this.ctx = c;
-            }
-            
+            this.ctx = this.canvas.getContext('2d')!; //trailing bang removes null or undefined from the expression
+            this.canvas.width = this.props.height;
+            this.canvas.height = this.props.width;
+
             this.disp =
                 this.props.imageStream
+                    .throttle(20) //this is necessary since node/js is single threaded. Without it there is no time for anything else to process.
                     .subscribe(i => {
-                        this.clear();
                         this.updateCanvas(i);
                     });
         } catch (error) {
@@ -62,10 +66,14 @@ export class ReactiveCanvas extends React.Component<IReactiveCanvasProps, undefi
         this.disp.dispose();
     }
 
+    shouldComponentUpdate() {
+        return false;
+    }
+
     render() {
         return (
-            <div>
-                <canvas ref='canvas'></canvas>
+            <div className='center-children'>
+                <canvas ref='canvas' className='render-canvas'></canvas>
             </div>
         );
     }
@@ -75,51 +83,24 @@ export class ReactiveCanvas extends React.Component<IReactiveCanvasProps, undefi
     }
 
     // updateCanvas is called for each frame to be rendered to the canvas.
-    updateCanvas(img: Image) {
+    updateCanvas(reactiveImage: ReactiveCanvasImage) {
         try {
-            let startTime = Date.now();
+            let img = new Image();
+            let blob = new Blob([reactiveImage.pixels], { type: this.props.imageMIMEType });
+            let url = URL.createObjectURL(blob);
 
-            this.canvas.width = img.width;
-            this.canvas.height = img.height;
+            img.onload = () => {
+                let startTime = Date.now();
+                this.clear();
+                this.ctx.drawImage(img, 0, 0);
+                URL.revokeObjectURL(url);
+                console.log('Time to draw/load img: ' + (Date.now() - startTime));
+            };
 
-            let imgData = this.ctx.createImageData(img.width, img.height);
-
-            for (let idx = 0; idx < img.pixels.length; idx++) {
-                let x = idx % img.width;
-                let y = Math.floor(idx / img.width);
-                let pixIdx = ((x + y * img.width) * 4);
-                this.setPixel(imgData, pixIdx, img.pixels[idx], img.pixelRep);
-            }
-            this.ctx.putImageData(imgData, 0, 0);
-
-            let endTime = Date.now() - startTime;
-            console.log('Frame Render: ' + endTime + 'ms');
-
+            img.src = url;
         } catch (error) {
             console.log(error);
         }
-    }
-
-    // setPixel sets the individual pixel value on the passed in ImageData obect.
-    // ImageData is what gets rendered to the canvas after the pixels have been set.
-    // How each pixel is set depends on the PixelRepresentation
-    setPixel(img: ImageData, pixIdx: number, color: number, pixelRep: PixelRepresentation) {
-
-        switch (pixelRep) {
-            case 'GrayScale8bpp':
-                this.setPixelGrayScale8bpp(img.data, pixIdx, color);
-                break;
-            //add other PixelRepresentation here:
-            default:
-                throw new Error('Invalid PixelRepresentation');
-        }
-    }
-
-    setPixelGrayScale8bpp(pixel: Uint8ClampedArray, startIndex: number, color: number) {
-        pixel[startIndex] = color;      //R
-        pixel[startIndex + 1] = color;  //G
-        pixel[startIndex + 2] = color;  //B
-        pixel[startIndex + 3] = 255;    //A
     }
 }
 
