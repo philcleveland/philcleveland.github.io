@@ -17,7 +17,7 @@ to design a business domain.
 
 ### More Information
 
-I am available for work.  Check out my [resume]({{ site.baseurl }}/resume) and [contact me](mailto:phil.cleveland@gmail.com).
+I am available for work.  Check out my [resume]({{ site.baseurl }}/resume).
 
 #### More More Information
 
