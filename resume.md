@@ -4,15 +4,31 @@ title: Resume
 permalink: /resume/
 ---
 # PHILLIP W. CLEVELAND
-Reno, NV | [email](mailto:phil.cleveland@gmail.com)
+Irvine, CA
 
 ## PROFESSIONAL EXPERIENCE
+
+#### Blizzard Entertainment (GAMES – ENTERTAINMENT SOFTWARE) IRVINE, CA
+* TECHNICAL LEAD SOFTWARE DEVELOPER 12/2018 - PRESENT 
+
+**Product Development:** More to come.
+
+**Leadership and Career Development:** More to come.
+
+**Hiring:** More to come.
+
+#### JMC NORTH AMERICA (MEDICAL DEVICES – AUTOMATED BREAST IMAGING) RENO, NEVADA
+**Women's Health** – Robotics systems and screening software for early breast cancer detection
+* SOFTWARE DEVELOPMENT MANAGER 02/2017 - 10/2017 
+
+**Product Development:** Responsible for full product lifecycle of FDA regulated medical software suite. 
+Designed and developed medical device software used to screen for breast cancer. Developed system architectures for Linux and Windows operating systems using front end technologies such as WPF, ElectronJS, ReactJS and Typescript.  Developed a multi process, decoupled, front-end and backend architecture using GRPC for inter-process communication.
 
 #### SONOCINÉ (MEDICAL DEVICES – AUTOMATED BREAST IMAGING) RENO, NEVADA
 
 **Women's Health** – Robotics systems and screening software for early breast cancer detection
 
-* SOFTWARE DEVELOPMENT MANAGER 06/2013 - PRESENT
+* SOFTWARE DEVELOPMENT MANAGER 06/2013 - 11/2016
 
 **Product Development:** Responsible for full product lifecycle of FDA regulated medical software suite. Implemented complete continuous integration process with automated testing procedure which reduced the production release cycle by 80%. Designed and developed proprietary screening software used for cancer detection. Designed and developed a medical record storage and retrieval application using encrypted https RESTful web services and a MVVM based WPF client application.
 
